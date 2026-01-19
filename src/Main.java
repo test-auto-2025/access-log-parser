@@ -16,5 +16,20 @@ public class Main {
         System.out.println("Произведение: " + product);
         System.out.println("Частное: " + quotient);
 
+        System.out.println("Дробная часть: " + desimal(quotient));
     }
+
+    public static double desimal(double x){
+    int  y = (int) x;
+    double z =  (x - y) * 1000;
+        System.out.println("debug z: " + z);
+    int f = (int) z;
+    double df = (double) f / 1000;
+    return df;
+
+    //DecimalFormat df = new DecimalFormat("#.###"); // Шаблон #.### для 3 знаков
+    //return df.format(z);
+}
+
+
 }
