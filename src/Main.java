@@ -2,20 +2,23 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Программа вычисления.");
-        System.out.println("Введите первое число:");
-        int number1 = new Scanner(System.in).nextInt();
-        //System.out.println("Введите второе число:");
-        //int number2 = new Scanner(System.in).nextInt();
 
-        System.out.println("Результат сложения двух последних знаков числа: " + sumLastNums(number1));
+        System.out.println("Программа вычисления ASCII кода");
+        System.out.println("Введите любую цифру от 0 до 9");
+        String singleCharStr = new Scanner(System.in).next(); // Считывает как слово
+        char ch1 = 'A';
+        if (singleCharStr.length() > 0) {
+            ch1 = singleCharStr.charAt(0); // Получаем первый символ
+            System.out.println("Вы ввели символ: " + ch1);
+        }
+
+        System.out.println("Результат преобразования символа " + ch1 + " в число: " + charToNum(ch1));
     }
 
-    public static int sumLastNums(int input) {
-    int LastOne = input % 10;
-    int LastTwo = (input / 10) % 10;
-    System.out.println("LastOne: " + LastOne + " LastTwo: " + LastTwo);
-    return LastOne + LastTwo;
+    public static int charToNum(char x)
+    {
+        // x - символ, который нужно преобразовать в число
+          return (int) x;
+    }
 
-}
 }
