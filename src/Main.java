@@ -11,14 +11,14 @@ public class Main {
             ch1 = singleCharStr.charAt(0); // Получаем первый символ
             System.out.println("Вы ввели символ: " + ch1);
         }
-
         System.out.println("Результат преобразования символа " + ch1 + " в число: " + charToNum(ch1));
     }
 
     public static int charToNum(char x)
     {
         // x - символ, который нужно преобразовать в число
-          return (int) x;
+        int AdciiCode = (int) x;
+        return AdciiCode - 48;
     }
 
 }
