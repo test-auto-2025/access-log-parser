@@ -3,21 +3,24 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("Программа вычисления ASCII кода");
-        System.out.println("Введите любую цифру от 0 до 9");
-        int InputNumber = new Scanner(System.in).nextInt(); // Считывает как слово
-        System.out.println("Результат проверки числа " + InputNumber + " на положительность: is " + isPositive(InputNumber));
-    }
+        System.out.println("Программа проверки попадания в диапазон");
+        System.out.println("Введите любые 3 числа");
+        int a = new Scanner(System.in).nextInt();
+        int b = new Scanner(System.in).nextInt();
+        int num = new Scanner(System.in).nextInt();
 
-    public static boolean isPositive(int x) {
+        System.out.println("Результат проверки числа " + num + " на попадание в диапазон между " + a + " до " + b + ": " + isInRange(a, b, num));
+       }
 
-        if (x > 0) {
+    public static boolean isInRange(int x, int y, int z) {
+        int min = Math.min(x, y);
+        int max = Math.max(x, y);
+        if (z >= min && z <= max) {
             return true;
         } else {
             return false;
-        }  // Возвращает результат проверки числа на положительность. Если число положительное, то возвращается true, иначе - false.
+        }  // Возвращает результат проверки числа на попадание в заданный диапазон. Если число попадает в диапазон, то возвращается true, иначе - false.
     }
 
-
-}
+ }
 
