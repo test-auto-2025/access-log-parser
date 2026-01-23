@@ -2,25 +2,30 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
         System.out.println("Программа проверки попадания в диапазон");
-        System.out.println("Введите любые 3 числа");
+        System.out.println("Введите любые 2 числа");
         int a = new Scanner(System.in).nextInt();
         int b = new Scanner(System.in).nextInt();
-        int num = new Scanner(System.in).nextInt();
-
-        System.out.println("Результат проверки числа " + num + " на попадание в диапазон между " + a + " до " + b + ": " + isInRange(a, b, num));
-       }
-
-    public static boolean isInRange(int x, int y, int z) {
-        int min = Math.min(x, y);
-        int max = Math.max(x, y);
-        if (z >= min && z <= max) {
-            return true;
-        } else {
-            return false;
-        }  // Возвращает результат проверки числа на попадание в заданный диапазон. Если число попадает в диапазон, то возвращается true, иначе - false.
+        System.out.println("Проверка: Введенные числа " + a + " и " + b + " делятся нацело одно на другое: is " + isDivisor(a, b));
     }
 
- }
+    public static boolean isDivisor(int x, int y) {
+        int min = Math.min(x, y);
+        int max = Math.max(x, y);
+        System.out.println("min = " + min );
+        System.out.println("max = " + max );
+        double devisionResult =(double) max / min;
+        System.out.println("devisionResult = " + devisionResult );
+        int CSchastnoe = (int) devisionResult;
+        System.out.println("(int) devisionResult = " + CSchastnoe );
+        double res = CSchastnoe / devisionResult;
+        System.out.println("result = " + res );
+        if (res < 1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+}
 
