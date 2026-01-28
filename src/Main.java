@@ -2,11 +2,20 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Программа проверки попадания в диапазон");
-        System.out.println("Введите любые 2 числа");
+        System.out.println("Введите любые 3 числа");
         int a = new Scanner(System.in).nextInt();
         int b = new Scanner(System.in).nextInt();
-        System.out.println("Проверка: Введенные числа " + a + " и " + b + " делятся нацело одно на другое: is " + isDivisor(a, b));
+        int c = new Scanner(System.in).nextInt();
+        System.out.println("Проверка: Введенные числа " + a + " и " + b + " равны: is " + isDivisor(a, b));
+    }
+
+    public static boolean isEqual (int aa, int bb, int cc)
+    {
+        if (aa == bb && bb == cc) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public static boolean isDivisor(int x, int y) {
@@ -26,6 +35,7 @@ public class Main {
             return true;
         }
     }
+
 
 }
 
