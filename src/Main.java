@@ -2,38 +2,20 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Введите любые 3 числа");
+        System.out.println("Введите первое числ");
         int a = new Scanner(System.in).nextInt();
-        int b = new Scanner(System.in).nextInt();
-        int c = new Scanner(System.in).nextInt();
-        System.out.println("Проверка: Введенные числа " + a + " и " + b + " равны: is " + isDivisor(a, b));
+        int b = 0;
+        for (int i = 1; i <= 4; i++) {
+            System.out.println("Введите число");
+            b = new Scanner(System.in).nextInt();
+            a = lastNumSum(a,b);
+            System.out.println("Подитог: " + a);
+        }
+        System.out.println("Результат суммы последних цифр: " + a);
     }
 
-    public static boolean isEqual (int aa, int bb, int cc)
-    {
-        if (aa == bb && bb == cc) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public static boolean isDivisor(int x, int y) {
-        int min = Math.min(x, y);
-        int max = Math.max(x, y);
-        System.out.println("min = " + min );
-        System.out.println("max = " + max );
-        double devisionResult =(double) max / min;
-        System.out.println("devisionResult = " + devisionResult );
-        int CSchastnoe = (int) devisionResult;
-        System.out.println("(int) devisionResult = " + CSchastnoe );
-        double res = CSchastnoe / devisionResult;
-        System.out.println("result = " + res );
-        if (res < 1) {
-            return false;
-        } else {
-            return true;
-        }
+    public static int lastNumSum(int a, int b){
+        return (a%10)+(b%10);
     }
 
 
