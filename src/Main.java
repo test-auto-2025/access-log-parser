@@ -2,20 +2,33 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Введите первое числ");
-        int a = new Scanner(System.in).nextInt();
-        for (int i = 1; i <= 4; i++) {
-            System.out.println("Введите число");
-            a = lastNumSum(a,new Scanner(System.in).nextInt());
-            System.out.println("Подитог: " + a);
+        System.out.println("Программа проверки регистра буквы");
+        System.out.println("Введите любую букву");
+        String singleCharStr = new Scanner(System.in).next(); // Считывает как слово
+        char ch1 = 'A';
+        if (singleCharStr.length() > 0) {
+            ch1 = singleCharStr.charAt(0); // Получаем первый символ
+            System.out.println("Вы ввели символ: " + ch1);
+        };
+        System.out.println("Буква в верхнем реистре: is " + isUpperCase(ch1));
+    }
+
+    public static boolean isUpperCase(char a) {
+        int asciicode = charToNum(a);
+        System.out.println(asciicode);
+        if ((asciicode > 64 && asciicode < 91) || (asciicode > 1039 && asciicode < 1072))
+            // Проверка для английских букв                Проверка для русских букв
+        {
+            return true;
+        } else {
+            return false;
         }
-        System.out.println("Результат суммы последних цифр: " + a);
     }
 
-    public static int lastNumSum(int a, int b){
-        return (a%10)+(b%10);
+    public static int charToNum(char x) {
+        // x - символ, который нужно преобразовать в число
+        return (int) x;
     }
-
-
+    ;
 }
 
