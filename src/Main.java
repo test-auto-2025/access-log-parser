@@ -4,23 +4,14 @@ public class Main {
        int a = 12;
        int b = 8;
        int c = 9;
-       int d = -3;
-        System.out.println("Сложение двух чисел " + a + " и " + b + " даёт  " + sum2(a,b));
-        System.out.println("Сложение двух чисел " + c + " и " + b + " даёт  " + sum2(c,b));
-        System.out.println("Сложение двух чисел " + d + " и " + b + " даёт  " + sum2(d,b));
-        System.out.println("Сложение двух чисел " + a + " и " + c + " даёт  " + sum2(a,c));
-        System.out.println("Сложение двух чисел " + b + " и " + c + " даёт  " + sum2(b,c));
-        System.out.println("Сложение двух чисел " + d + " и " + c + " даёт  " + sum2(d,c));
-        System.out.println("Сложение двух чисел " + a + " и " + d + " даёт  " + sum2(a,d));
+        System.out.println("Число " + a + " Делится на цело на 3 и на 5: is " + is35(a));
+        System.out.println("Число " + b + " Делится на цело на 3 и на 5: is " + is35(b));
+        System.out.println("Число " + c + " Делится на цело на 3 и на 5: is " + is35(c));
+
     }
 
-    public static int sum2(int x, int y) {
-       int res = x + y;
-       if (res > 10 && res < 20) {
-            return 20;
-        } else {
-            return res;
-        }
+    public static boolean is35(int x){
+        return x % 3 == 0 || x % 5 == 0;
     }
 }
 
