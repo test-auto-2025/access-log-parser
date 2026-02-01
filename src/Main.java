@@ -1,21 +1,26 @@
 
-
 public class Main {
     public static void main(String[] args) {
-       int a = 10;
-       int b = 7;
-       int c = 3;
+       int a = 12;
+       int b = 8;
+       int c = 9;
        int d = -3;
-        System.out.println("Сложение двух изтрех чисел " + a + " и " + b + " и " + c + " даёт 3-е: is " + sum3(a,b,c));
-        System.out.println("Сложение двух изтрех чисел " + d + " и " + b + " и " + c + " даёт 3-е: is " + sum3(d,b,c));
-        System.out.println("Сложение двух изтрех чисел " + a + " и " + b + " и " + d + " даёт 3-е: is " + sum3(a,b,d));
-
+        System.out.println("Сложение двух чисел " + a + " и " + b + " даёт  " + sum2(a,b));
+        System.out.println("Сложение двух чисел " + c + " и " + b + " даёт  " + sum2(c,b));
+        System.out.println("Сложение двух чисел " + d + " и " + b + " даёт  " + sum2(d,b));
+        System.out.println("Сложение двух чисел " + a + " и " + c + " даёт  " + sum2(a,c));
+        System.out.println("Сложение двух чисел " + b + " и " + c + " даёт  " + sum2(b,c));
+        System.out.println("Сложение двух чисел " + d + " и " + c + " даёт  " + sum2(d,c));
+        System.out.println("Сложение двух чисел " + a + " и " + d + " даёт  " + sum2(a,d));
     }
 
-    public static boolean sum3(int x, int y, int z) {
-        if ( x + y == z || x + z == y || y + z == x)
-        return true;
-        return false;
+    public static int sum2(int x, int y) {
+       int res = x + y;
+       if (res > 10 && res < 20) {
+            return 20;
+        } else {
+            return res;
+        }
     }
 }
 
