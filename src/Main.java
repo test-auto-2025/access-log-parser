@@ -6,21 +6,15 @@ public class Main {
        int b = 5;
        int c = -3;
        int d = 0;
-        System.out.println("Результат сравнения " + a + " и " + b + " = " + makeDecision(a,b));
-        System.out.println("Результат сравнения " + b + " и " + c + " = " + makeDecision(b,c));
-        System.out.println("Результат сравнения " + c + " и " + d + " = " + makeDecision(c,d));
+        System.out.println("Результат сравнения " + a + " и " + b + " и " + c + " = " + max3(a,b,c));
+        System.out.println("Результат сравнения " + d + " и " + b + " и " + c + " = " + max3(d,b,c));
+        System.out.println("Результат сравнения " + a + " и " + b + " и " + d + " = " + max3(a,b,d));
     }
 
-    public static String makeDecision(int x, int y){
-        if (x < y){
-            return x + " < " + y;
-        } else if (x > y){
-            return x + " > " + y;
-        } else {
-            return x + " = " + y;
-        }
+    public static int max3(int x, int y, int z){
+        int res = x > y ? x : y;
+        return res > z ? res : z;
     }
-
 
 }
 
