@@ -1,20 +1,21 @@
-import java.util.Scanner;
+
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Программа вычисления суммы, разности, произведения и частного двух чисел.");
-        System.out.println("Введите первое число:");
-        int number1 = new Scanner(System.in).nextInt();
-        System.out.println("Введите второе число:");
-        int number2 = new Scanner(System.in).nextInt();
-        double quotient = (double) number1  /number2;
-        int sum = number1 + number2;
-        int diff = number1 - number2;
-        int product = number1 * number2;
-        System.out.println("Сумма: " + sum);
-        System.out.println("Разность: " + diff);
-        System.out.println("Произведение: " + product);
-        System.out.println("Частное: " + quotient);
+       int a = 10;
+       int b = 7;
+       int c = 3;
+       int d = -3;
+        System.out.println("Сложение двух изтрех чисел " + a + " и " + b + " и " + c + " даёт 3-е: is " + sum3(a,b,c));
+        System.out.println("Сложение двух изтрех чисел " + d + " и " + b + " и " + c + " даёт 3-е: is " + sum3(d,b,c));
+        System.out.println("Сложение двух изтрех чисел " + a + " и " + b + " и " + d + " даёт 3-е: is " + sum3(a,b,d));
 
     }
+
+    public static boolean sum3(int x, int y, int z) {
+        if ( x + y == z || x + z == y || y + z == x)
+        return true;
+        return false;
+    }
 }
+
