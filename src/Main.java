@@ -6,14 +6,21 @@ public class Main {
        int b = 5;
        int c = -3;
        int d = 0;
-        System.out.println("максимум из чисел " + a + " и " + b + " = " + max(a,b));
-        System.out.println("максимум из чисел  " + a + " и " + c + " = " + max(a,c));
-        System.out.println("максимум из чисел  " + a + " и " + d + " = " + max(a,d));
+        System.out.println("Результат сравнения " + a + " и " + b + " = " + makeDecision(a,b));
+        System.out.println("Результат сравнения " + b + " и " + c + " = " + makeDecision(b,c));
+        System.out.println("Результат сравнения " + c + " и " + d + " = " + makeDecision(c,d));
     }
 
-    public static int max(int x, int y){
-        return x > y ? x : y;
-      };
+    public static String makeDecision(int x, int y){
+        if (x < y){
+            return x + " < " + y;
+        } else if (x > y){
+            return x + " > " + y;
+        } else {
+            return x + " = " + y;
+        }
+    }
+
 
 }
 
