@@ -1,33 +1,38 @@
 
 public class Main {
     public static void main(String[] args) {
-        int a = 111;
-        int b = 702;
-        int c = 13;
+        int a = 1;
+        int b = 3;
+        int c = 7;
         int d = 35;
-        System.out.println("Его возраст " + a + " "+ age(a));
-        System.out.println("Его возраст " + b + " "+ age(b));
-        System.out.println("Его возраст " + c + " "+ age(c));
-        System.out.println("Его возраст " + d + " "+ age(d));
+        System.out.println("День недели " + a + " - " + weekday(a));
+        System.out.println("День недели " + b + " - " + weekday(b));
+        System.out.println("День недели " + c + " - " + weekday(c));
+        System.out.println("День недели " + d + " - " + weekday(d));
     }
 
-    public static String age(int x) {
+    public static String weekday(int x) {
 
-            int y = x % 100; // остаток от деления на 100
-            if (y >= 11 && y <= 14) {
-                return "лет";
-            } else { // если число не входит в диапазон 11-14, проверяем последнюю цифру числа
-                switch (y % 10) {
-                    case 1:
-                        return "год";
-                    case 2:
-                    case 3:
-                    case 4:
-                        return "года";
-                    default:
-                        return "лет";
-                }
+        switch (x) {
+            case 1:
+                return "Пенедельник";
+            case 2:
+                return "Вторник";
+            case 3:
+                return "Среда";
+            case 4:
+                return "Четверг";
+            case 5:
+                return "Пятница";
+            case 6:
+                return "Суббота";
+            case 7:
+                return "Воскресенье";
 
-            }
+            default:
+                return "это не день недели!";
+
+
         }
     }
+}
