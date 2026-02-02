@@ -1,23 +1,33 @@
 
 public class Main {
     public static void main(String[] args) {
-        int a = 5;
-        int b = 6;
-        int c = 9;
-        int d = -3;
-        System.out.println("a = " + a + " b = " + b +  " Check: is " + magic6(a,b));
-        System.out.println("a = " + a + " c = " + c +  " Check: is " + magic6(a,c));
-        System.out.println("b = " + b + " c = " + c +  " Check: is " + magic6(b,c));
-        System.out.println("c = " + c + " d = " + d +  " Check: is " + magic6(c,d));
-        System.out.println("d = " + d + " a = " + a +  " Check: is " + magic6(d,a));
-        System.out.println("d = " + d + " b = " + b +  " Check: is " + magic6(b,d));
-
-
+        int a = 111;
+        int b = 702;
+        int c = 13;
+        int d = 35;
+        System.out.println("Его возраст " + a + " "+ age(a));
+        System.out.println("Его возраст " + b + " "+ age(b));
+        System.out.println("Его возраст " + c + " "+ age(c));
+        System.out.println("Его возраст " + d + " "+ age(d));
     }
 
-    public static boolean magic6(int x, int y) {
-        return (x == 6 || y == 6 || x + y == 6 || x - y == 6 || y - x == 6);
+    public static String age(int x) {
 
+            int y = x % 100; // остаток от деления на 100
+            if (y >= 11 && y <= 14) {
+                return "лет";
+            } else { // если число не входит в диапазон 11-14, проверяем последнюю цифру числа
+                switch (y % 10) {
+                    case 1:
+                        return "год";
+                    case 2:
+                    case 3:
+                    case 4:
+                        return "года";
+                    default:
+                        return "лет";
+                }
+
+            }
+        }
     }
-}
-
