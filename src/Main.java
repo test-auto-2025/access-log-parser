@@ -1,17 +1,22 @@
 
 public class Main {
     public static void main(String[] args) {
-       int a = 8;
-       int b = 15;
-       int c = 9;
-        System.out.println("Число " + a + " Делится на цело на 3 или на 5: is " + is35(a));
-        System.out.println("Число " + b + " Делится на цело на 3 или на 5: is " + is35(b));
-        System.out.println("Число " + c + " Делится на цело на 3 или на 5: is " + is35(c));
+        int a = 5;
+        int b = 6;
+        int c = 9;
+        int d = -3;
+        System.out.println("a = " + a + " b = " + b +  " Check: is " + magic6(a,b));
+        System.out.println("a = " + a + " c = " + c +  " Check: is " + magic6(a,c));
+        System.out.println("b = " + b + " c = " + c +  " Check: is " + magic6(b,c));
+        System.out.println("c = " + c + " d = " + d +  " Check: is " + magic6(c,d));
+        System.out.println("d = " + d + " a = " + a +  " Check: is " + magic6(d,a));
+        System.out.println("d = " + d + " b = " + b +  " Check: is " + magic6(b,d));
+
 
     }
 
-    public static boolean is35(int x){
-        return (x % 3 == 0 || x % 5 == 0) && (x % 15 != 0);
+    public static boolean magic6(int x, int y) {
+        return (x == 6 || y == 6 || x + y == 6 || x - y == 6 || y - x == 6);
 
     }
 }
