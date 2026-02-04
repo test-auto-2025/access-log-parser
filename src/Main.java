@@ -1,26 +1,46 @@
 
 public class Main {
     public static void main(String[] args) {
-        String a = "Среда";
-        printDays(a);
+        int a = 2;
+        int b = 9;
+        System.out.println(pow(a , b));
     }
 
-    public static void printDays(String x) {
-        switch (x) {
-            case "Пенедельник":
-                System.out.println("Пенедельник");
-            case "Вторник":
-                System.out.println("Вторник");
-            case "Среда":
-                System.out.println("Среда");
-            case "Четверг":
-                System.out.println("Четверг");
-            case "Пятница":
-                System.out.println("Пятница");
-            case "Суббота":
-                System.out.println("Суббота");
-            case "Воскресенье":
-                System.out.println("Воскресенье");
-        }
+    public static int pow(int x, int y){
+    int result = 1;
+        for (int i = 0; i < y; i++) {
+        result *= x;
     }
+        return result;
+}
+
+
+
+
+
+    public static String chet(int x) {
+        for (int i = 0; i < x; i += 2)
+        System.out.print (i + " ");
+        return "";
+    }
+
+
+
+
+
+
+    public static String reverseListNums(int x) {
+        for (int i = x; i >= 0; i--)
+            System.out.print(i + " ");
+        return "";
+    }
+
+    public static String listNums(int x) {
+        for (int i = 0; i <= x; i++)
+            System.out.print(i + " ");
+        return "";
+
+    }
+
+
 }
