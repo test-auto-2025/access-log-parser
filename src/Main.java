@@ -3,30 +3,35 @@ public class Main {
     public static void main(String[] args) {
         int a = 2;
         int b = 9;
-        System.out.println(pow(a , b));
+        System.out.println(numLen(a));
     }
 
-    public static int pow(int x, int y){
-    int result = 1;
+    public static int numLen(long x){
+
+    }
+
+
+
+
+
+
+
+
+
+    public static int pow(int x, int y) {
+        int result = 1;
         for (int i = 0; i < y; i++) {
-        result *= x;
-    }
+            result *= x;
+        }
         return result;
-}
-
-
-
+    }
 
 
     public static String chet(int x) {
         for (int i = 0; i < x; i += 2)
-        System.out.print (i + " ");
+            System.out.print(i + " ");
         return "";
     }
-
-
-
-
 
 
     public static String reverseListNums(int x) {
