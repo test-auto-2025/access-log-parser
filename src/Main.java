@@ -1,10 +1,19 @@
 
 public class Main {
     public static void main(String[] args) {
-        int a = 777777777;
-        int b = 1122;
-        System.out.println("Проверка цифры числа " + a + " на одинаковость: " + equalNum(a));
-        System.out.println("Проверка цифры числа " + b + " на одинаковость: " + equalNum(b));
+        int a = 5;
+        leftTriangle(a);
+    }
+
+    public static void leftTriangle(int x){
+
+        for (int i = 1; i <= x; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+
     }
 
 
@@ -20,15 +29,27 @@ public class Main {
 
 
 
-    public static boolean equalNum(int x){
+
+
+
+    public static void square(int x) {
+
+        for (int i = 1; i <= x; i++) {
+            for (int j = 1; j <= x; j++) {
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+    }
+
+    public static boolean equalNum(int x) {
         int y = x % 10;
-        while (x>10) {
+        while (x > 10) {
             x = x / 10;
             if (y != x % 10) return false;
         }
         return true;
     }
-
 
     public static int numLen(long x) //количество знаков в числе x
     {
