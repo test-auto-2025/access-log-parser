@@ -1,21 +1,38 @@
-
+import java.io.File;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-       int a = 10;
-       int b = 7;
-       int c = 3;
-       int d = -3;
-        System.out.println("Сложение двух изтрех чисел " + a + " и " + b + " и " + c + " даёт 3-е: is " + sum3(a,b,c));
-        System.out.println("Сложение двух изтрех чисел " + d + " и " + b + " и " + c + " даёт 3-е: is " + sum3(d,b,c));
-        System.out.println("Сложение двух изтрех чисел " + a + " и " + b + " и " + d + " даёт 3-е: is " + sum3(a,b,d));
+
+        int successTries = 0;
+        int losedTries = 0;
+        while (true) {
+            System.out.println("Введите путь к файлу: ");
+            String path = new Scanner(System.in).nextLine();
+            File file = new File(path);
+
+            boolean isDirectory = file.isDirectory();
+            if (isDirectory) {
+                System.out.println("Это папка, а не файл!");
+                losedTries++;
+                System.out.println("Неудачных попыток: " + losedTries);
+                continue;
+            }
+
+            boolean fileExist = file.exists();
+            if (!fileExist) {
+                System.out.println("Неверно указан путь или файл не найден");
+                losedTries++;
+                System.out.println("Неудачных попыток: " + losedTries);
+                continue;
+            }
+
+            System.out.println("Ура! Файл найден!");
+            successTries++;
+            System.out.println("Успешных попыток: " + successTries);
+        }
 
     }
 
-    public static boolean sum3(int x, int y, int z) {
-        if ( x + y == z || x + z == y || y + z == x)
-        return true;
-        return false;
-    }
+
 }
-
