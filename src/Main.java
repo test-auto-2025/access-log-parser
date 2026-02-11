@@ -1,8 +1,49 @@
 
 public class Main {
     public static void main(String[] args) {
-        int a = 5;
-        leftTriangle(a);
+
+        guessGame();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public static void guessGame() {
+        int randomNum = 3;
+        java.util.Scanner sc = new java.util.Scanner(System.in);
+        System.out.println("What number am I thinking (0 to 9)? :");
+        int x = 0;
+        do {
+            x = sc.nextInt();
+            if (x != randomNum) {
+                System.out.println("No, try again");
+            } else {
+                System.out.println("Yes, it`s " + randomNum);
+            }
+        } while (x != randomNum);
+    }
+
+    public static void rightTriangle(int x){
+        for (int i = 1; i <= x; i++) {
+            for (int j = 1; j <= x - i; j++) {
+                System.out.print(" ");
+            }
+            for (int k = 1; k <= i; k++) {
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
     }
 
     public static void leftTriangle(int x){
@@ -13,24 +54,7 @@ public class Main {
             }
             System.out.println("");
         }
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     public static void square(int x) {
 
