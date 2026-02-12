@@ -1,38 +1,17 @@
-import java.io.File;
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
-
-        int successTries = 0;
-        int losedTries = 0;
-        while (true) {
-            System.out.println("Введите путь к файлу: ");
-            String path = new Scanner(System.in).nextLine();
-            File file = new File(path);
-
-            boolean isDirectory = file.isDirectory();
-            if (isDirectory) {
-                System.out.println("Это папка, а не файл!");
-                losedTries++;
-                System.out.println("Неудачных попыток: " + losedTries);
-                continue;
-            }
-
-            boolean fileExist = file.exists();
-            if (!fileExist) {
-                System.out.println("Неверно указан путь или файл не найден");
-                losedTries++;
-                System.out.println("Неудачных попыток: " + losedTries);
-                continue;
-            }
-
-            System.out.println("Ура! Файл найден!");
-            successTries++;
-            System.out.println("Успешных попыток: " + successTries);
-        }
-
+        int[] arr1 = {1, 2, 3, 4, 5, 6, 7, 8};
+        System.out.println (findFirst(arr1, 6));
     }
 
-
+    public static int findFirst(int[] arr, int x) {
+        for (int i = 0; i < arr.length; i++) {
+            if (x == arr[i]) {
+                System.out.println("элемент с номером" + i );
+                return i;
+            }
+        }
+        System.out.println("-1"); //элемент не найден
+        return -1;
+    }
 }
