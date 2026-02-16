@@ -1,10 +1,41 @@
 public class Main {
     public static void main(String[] args) {
         int[] arr1 = {1, 2, -3, 4, -5, -6, 7, 5, 5, -8};
-        System.out.println ("Массив 1 - палиндром: " + palindrom(arr1));
         int[] arr2 = {-8, 5, 5, 7, -6, 7, 5, 5, -8};
-        System.out.println ("Массив 2 - палиндром: " + palindrom(arr2));
+        reverse(arr1);
+        System.out.println ("Массив 1 " );
+        for (int i=0; i <= arr1.length - 1; i++){
+            System.out.print(arr1[i] + ", "); //выводим массив на экран через запятую
+        }
+        System.out.println ("");
+        System.out.println ("Массив 2 " );
+        reverse(arr2);
+        for (int i=0; i <= arr2.length - 1; i++){
+            System.out.print(arr2[i] + ", "); //выводим массив на экран через запятую
+        }
     }
+
+    public static void reverse(int[] arr){
+
+        int left = 0;
+        int right = arr.length - 1;
+        while (left < right) {
+            int temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+            left++;
+            right--;
+        }  //метод меняет порядок элементов массива на обратный
+    }
+
+
+
+
+
+
+
+
+
 
     public static boolean palindrom(int[] arr){
 
@@ -19,14 +50,6 @@ public class Main {
         }
         return true;  //если все элементы равны с двух сторон, то это палиндром
     }
-
-
-
-
-
-
-
-
 
     public static int countPositive(int[] arr)
     {
