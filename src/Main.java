@@ -1,8 +1,32 @@
 public class Main {
     public static void main(String[] args) {
         int[] arr1 = {1, 2, -3, 4, -5, -6, 7, 5, 5, -8};
-        System.out.println (countPositive(arr1));
+        System.out.println ("Массив 1 - палиндром: " + palindrom(arr1));
+        int[] arr2 = {-8, 5, 5, 7, -6, 7, 5, 5, -8};
+        System.out.println ("Массив 2 - палиндром: " + palindrom(arr2));
     }
+
+    public static boolean palindrom(int[] arr){
+
+        int left = 0;
+        int right = arr.length - 1;
+        while (left < right) {
+            if (arr[left] != arr[right]) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;  //если все элементы равны с двух сторон, то это палиндром
+    }
+
+
+
+
+
+
+
+
 
     public static int countPositive(int[] arr)
     {
@@ -14,20 +38,6 @@ public class Main {
         }
         return countPositive;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     public static int maxAbs(int[] arr)
     {
