@@ -3,10 +3,31 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         int[] arr1 = {1, 2, 3, -4, -5, 3, 8, 6, -3, 3};
-        int[] arr2 = deleteNegative(arr1);
-        System.out.println("илементы массива, кроме отрицательных:");
+        int position = 7;
+        int element = 55;
+        int[] arr2 = add(arr1, element,  position);
+        System.out.println("вставлено значение " + element + " на позицию: " + position + " в массиве: ");
         System.out.print(Arrays.toString(arr2));
     }
+
+    public static int[] add(int[] arr, int x, int pos){
+        int[] res = new int[arr.length+1];
+        for (int i = 0; i < pos; i++) {
+            res[i] = arr[i];
+        }
+        res[pos] = x;
+        for (int i = pos; i < arr.length; i++) {
+            res[i + 1] = arr[i];
+        }
+        return res;  //метод вставляет число x в позицию pos массива arr и возвращает новый массив
+
+    }
+
+
+
+
+
+
 
     public static int[] deleteNegative(int[] arr) {
         int[] res = new int[0];
