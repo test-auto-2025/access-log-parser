@@ -3,14 +3,30 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         int[] arr1 = {1, 2, 3, -4, -5, 3, 8, 6, -3, 3};
-        int position = 7;
-        int element = 55;
+        int position = 3;
+        int[] element = {33, 44, 55, 77};
         int[] arr2 = add(arr1, element,  position);
-        System.out.println("вставлено значение " + element + " на позицию: " + position + " в массиве: ");
+        System.out.println("вставлено массив начиная с позиции " + position );
         System.out.print(Arrays.toString(arr2));
     }
 
-    public static int[] add(int[] arr, int x, int pos){
+    public static int[] add(int[] arr, int[] ins, int pos){
+        int[] res = new int[arr.length + ins.length];
+        for (int i = 0; i < pos; i++) {
+            res[i] = arr[i];
+        }
+        for (int i = 0; i < ins.length; i++) {
+            res[pos + i] = ins[i];
+        }
+        for (int i = pos; i < arr.length; i++) {
+            res[ins.length + i] = arr[i];
+        }
+        return res;  //метод вставляет массив ins в позицию pos массива arr и возвращает новый массив
+    }
+
+
+
+    public static int[] add1(int[] arr, int x, int pos){
         int[] res = new int[arr.length+1];
         for (int i = 0; i < pos; i++) {
             res[i] = arr[i];
