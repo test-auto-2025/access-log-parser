@@ -2,13 +2,32 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        int[] arr1 = {1, 2, -3, 4, -5};
-        int[] arr2 = {-9, 1, 5, 5, -7};
-        int[] arr3 = concat(arr1, arr2);
-        System.out.println("Массив - сложение двух");
-        System.out.print(Arrays.toString(arr3));
-
+        int[] arr1 = {1, 2, 3, -4, -5, 3, 8, 6, 3, 3};
+        int element = 3;
+        int[] arr2 = findAll(arr1, element);
+        System.out.println("индексы всех вхождений числа 3 в массив:");
+        System.out.print(Arrays.toString(arr2));
     }
+
+    public static int[] findAll(int[] arr, int x) {
+        int[] index = new int[0];
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == x) {
+                index = addLast(index, i);
+            }
+        }
+        return index;  //метод возвращает массив индексов всех вхождений числа x в массиве arr
+    }
+
+    public static int[] addLast(int[] arr, int x) {
+        int[] res = new int[arr.length + 1];
+        for (int i = 0; i < arr.length; i++) {
+            res[i] = arr[i];
+        }
+        res[res.length - 1] = x;
+        return res;  //метод добавляет число x в конец массива arr и возвращает новый массив
+    }
+
 
     public static int[] concat(int[] arr1, int[] arr2) {
         int count1 = arr1.length;
@@ -21,10 +40,6 @@ public class Main {
         }
         return result;
     }
-
-
-
-
 
     public static int[] reverseBack(int[] arr) {
         int[] result = new int[arr.length];
