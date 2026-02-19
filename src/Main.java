@@ -2,21 +2,20 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        int[] arr1 = {1, 2, 3, -4, -5, 3, 8, 6, 3, 3};
-        int element = 3;
-        int[] arr2 = findAll(arr1, element);
-        System.out.println("индексы всех вхождений числа 3 в массив:");
+        int[] arr1 = {1, 2, 3, -4, -5, 3, 8, 6, -3, 3};
+        int[] arr2 = deleteNegative(arr1);
+        System.out.println("илементы массива, кроме отрицательных:");
         System.out.print(Arrays.toString(arr2));
     }
 
-    public static int[] findAll(int[] arr, int x) {
-        int[] index = new int[0];
+    public static int[] deleteNegative(int[] arr) {
+        int[] res = new int[0];
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == x) {
-                index = addLast(index, i);
+            if (arr[i] >= 0) {
+                res = addLast(res, arr[i]);
             }
         }
-        return index;  //метод возвращает массив индексов всех вхождений числа x в массиве arr
+        return res;  //метод удаляет из массива все отрицательные элементы и возвращает новый массив
     }
 
     public static int[] addLast(int[] arr, int x) {
@@ -28,6 +27,21 @@ public class Main {
         return res;  //метод добавляет число x в конец массива arr и возвращает новый массив
     }
 
+
+
+
+
+
+
+    public static int[] findAll(int[] arr, int x) {
+        int[] index = new int[0];
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == x) {
+                index = addLast(index, i);
+            }
+        }
+        return index;  //метод возвращает массив индексов всех вхождений числа x в массиве arr
+    }
 
     public static int[] concat(int[] arr1, int[] arr2) {
         int count1 = arr1.length;
