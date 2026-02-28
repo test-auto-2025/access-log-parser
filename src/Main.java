@@ -2,6 +2,40 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
+
+int a = new int [3][14].length;
+System.out.println(a);
+
+
+
+
+
+
+
+
+        String [][] arr = {{"b", "s", "i"}, {"l","c"}};// двумерный массив строк
+        // вывести все элементы массива пока не встретится символ "s"
+        // если встретился символ "s" прервать внутренний цикл и перейти к следующей итерации внешнего цикла
+                for (int i = 0; i < arr.length ; i++) {
+                    for (int j = 0; j < arr[i].length; j++) {
+                        System.out.print(arr[i][j] + " ");
+                        if (arr[i][j].equals("s")) {break;}
+                    }
+
+                    continue;
+                }
+        System.out.println( " ");
+
+
+
+
+
+
+
+
+
+
+
         int[] arr1 = {1, 2, 3, -4, -5, 3, 8, 6, -3, 3};
         int position = 3;
         int[] element = {33, 44, 55, 77};
