@@ -1,36 +1,36 @@
 public class Start {
     public static void main(String[] args) {
-        int a1 = 10;
-        int b1 = 11;
-        int a2 = 15;
-        int b2 = 19;
-        Point p1 = new Point(1, 3);
-        Point p2 = new Point(5, 8);
-        Point p3 = new Point(a1, b1);
-        Point p4 = new Point(a2, b2);
-        System.out.println("Point1 = " + p1);
-        System.out.println("Point2 = " + p2);
-        System.out.println("Point3 = " + p3);
-        System.out.println("Point4 = " + p4);
+        Point[] points = new Point[5];
+        points[0] = new Point(1, 5);
+        points[1] = new Point(2, 8);
+        points[2] = new Point(5, 3);
+        points[3] = new Point(8, 9);
+        for (int j = 0; j < 4; j++){
+            System.out.println("Point " + j + " = " + points[j]);
+        }
+        PolyLine pl = new PolyLine();
+        for (int j = 0; j < 4; j++){
+            pl.addPoint(points[j]);
+            //System.out.println("PolyLine = " + pl + " длина: " + pl.getPolyLineLength());
+        }
+        System.out.println("1.2. PolyLine = " + pl + " длина: " + pl.getPolyLineLength());
+        Line[] lines = new Line[5];
+        for (int j = 0; j < 3; j++){
+            lines[j] = new Line(points[j], points[j + 1]);
+            System.out.println("3.   Line = " + lines[j] + ", и ее длина: " + lines[j].getLength());
+        }
+        double sum =0;
+        for (int j = 0; j < 3; j++) {
+            sum = sum + lines[j].getLength();// суммируем длины отрезков
+        }
+        System.out.println("4. Сумма длин отрезков: " + sum);
+        System.out.println("5. Длина Ломаной и массива Линий - равны : " + (sum==pl.getPolyLineLength())); // сравниваем с длиной полилинии
 
-        Line l1 = new Line(p1, p2);
-        Line l2 = new Line(a1, b1, a2, b2);
-        Line l3 = new Line(p2, p3);
-        System.out.println("Line1 = " + l1 + " длина: " + l1.getLength());
-        System.out.println("Line2 = " + l2 + " длина: " + l2.getLength());
-        System.out.println("Line3 = " + l3 + " длина: " + l3.getLength());
-
-        System.out.println("Меняем координаты точек линий: ");
-        l1.x2 = l3.x1 = 10;
-        l1.y2 = l3.y1 = 10;
-        l2.x1 = l3.x2 = 7;
-        l2.y1 = l3.y2 = 6;
-        //также можно сначал апоменять точки а потом переопределить линии по этим точкам
-        System.out.println("Line1 = " + l1 + " длина: " + l1.getLength());
-        System.out.println("Line2 = " + l2 + " длина: " + l2.getLength());
-        System.out.println("Line3 = " + l3 + " длина: " + l3.getLength());
-
-        double sum = l1.getLength() + l1.getLength() + l2.getLength();
-        System.out.println("Сумма длин =  " + sum);
+       // Меняем точку
+        points[1].x = 12;
+        lines[0].x2 = points[1].x;
+        lines[1].x1 = points[1].x;
+        pl.setPoint(1, points[1]);
+        System.out.println("6.   PolyLine = " + pl + " длина: " + pl.getPolyLineLength());
     }
 }

@@ -1,4 +1,5 @@
 public class Line {
+
     int x1, y1, x2, y2;
 
     public Line(int x1, int y1, int x2, int y2) {
@@ -18,6 +19,8 @@ public class Line {
     public double getLength() {
         return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
     }
+
+    Line(){}
 
     public String toString() {
         return "Линия от (" + x1 + ", " + y1 + ") до (" + x2 + ", " + y2 + ")";
