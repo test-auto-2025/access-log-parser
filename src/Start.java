@@ -4,21 +4,11 @@ public class Start {
         Fraction f2 = new Fraction(2, 5);
         Fraction f3 = new Fraction(7, 8);
 
-
         System.out.println(f1.toString()); // prints "5/8"
         System.out.println(f2.toString()); // prints "3/4"
         System.out.println(f3.toString()); // prints "1/3"
 
-
         Fraction f4 = f1.sum(f2).sum(f3).minus(5);
         System.out.println(f4.toString());
-
-        Fraction f5 = f1.sum(f2);
-        System.out.println(f5.toString());
-        Fraction f6 = f5.sum(f3);
-        System.out.println(f6.toString());
-        Fraction f7 = f6.minus(5);
-        System.out.println(f7.toString());
-
     }  // end of main method
 }  // end of Start class
